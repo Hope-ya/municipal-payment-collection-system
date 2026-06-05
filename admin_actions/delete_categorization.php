@@ -1,0 +1,19 @@
+<?php
+header("Content-Type: application/json");
+require_once "../backend/db_config.php";
+
+$data = json_decode(file_get_contents("php://input"), true);
+
+if (empty($data["id"])) {
+    echo json_encode(["success" => false, "message" => "Invalid input"]);
+    exit;
+}
+
+try {
+    $stmt = $pdo->prepare("DELETE FROM categorizations WHERE id = ?");
+    $stmt->execute([$data["id"]]);
+
+    echo json_encode(["success" => true]);
+} catch (Exception $e) {
+    echo json_encode(["success" => false, "message" => $e->getMessage()]);
+}
