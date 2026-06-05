@@ -1,0 +1,60 @@
+#sidebar {
+    width: 5rem;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+}
+
+#sidebar:hover {
+    width: 16rem;
+}
+
+.sidebar-text {
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#sidebar:hover .sidebar-text {
+    opacity: 1;
+}
+
+button {
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#transactions-section {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#transactions-section {
+    overflow: hidden;
+}
+
+
+
+
+
+
+ /* Ensure the LGU Payment section does not exceed sidebar height */
+ #lgu-payment-references-section {
+    max-height: calc(100vh - 100px); /* Adjust based on layout */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Scrollable table container */
+.scrollable-table {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 300px; /* Adjust if needed */
+}
+
+
+
+
